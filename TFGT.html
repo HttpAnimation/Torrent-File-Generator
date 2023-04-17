@@ -87,7 +87,7 @@ width: 70%;
 
 
 <!-- Hide the sidebar -->
-<button class="button" onclick="toggleSidebar()">Hide the sidebar (f)</button>
+<button class="button button-hide" onclick="toggleSidebar()">Hide the sidebar (f)</button>
 
 <!--Home button-->
 <button class="button button-home" onclick="redirectToServerUrl()">Home</button>
@@ -109,14 +109,15 @@ function redirectToServerUrl() {
 
   // Check if the webpage is being accessed from a server
   if (currentUrl.startsWith("http")) {
-// If yes, redirect to the specified server URL
-window.location.href = "http://fyc.rf.gd/FYCREWirte%20Code/index.html?i=1/";
-  } else {
-// If no, redirect to the local index.html file
-window.location.href = "index.html";
+    // If yes, redirect to the specified server URL
+    window.location.href = "http://fyc.rf.gd/FYCREWirte%20Code/index.html?i=1/";
+  } else if (currentUrl.startsWith("file://") || currentUrl.startsWith("localhost") || currentUrl.startsWith("http://127.0.0.1:3000")) {
+    // If accessing from local host, redirect to local index.html file
+    window.location.href = "index.html";
   }
 }
 </script>
+
 
 
 </div>
