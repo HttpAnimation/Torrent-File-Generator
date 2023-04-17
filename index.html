@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Torrent File Generator</title>
-	<link rel="stylesheet" href="CodeForTorrentFileGenerator/style.css">
-	<style>
-		body {
-			background-color: #9e75f0; /* Use a light purple color for the background */
-		}
-	</style>
+<meta charset="UTF-8">
+<title>Torrent File Generator</title>
+<link rel="stylesheet" href="CodeForTorrentFileGenerator/style.css">
+<style>
+body {
+background-color: #9e75f0; /* Use a light purple color for the background */
+}
+</style>
 </head>
 <body>
-    
-	<div class="container">
-		<h1>Torrent File Generator</h1>
-		<form>
-			<label for="name">Torrent Name</label>
-			<input type="text" id="name" placeholder="Enter torrent name">
 
-			<label for="description">Torrent Description</label>
-			<textarea id="description" placeholder="Enter torrent description"></textarea>
+<div class="container">
+<h1>Torrent File Generator</h1>
+<form>
+<label for="name">Torrent Name</label>
+<input type="text" id="name" placeholder="Enter torrent name">
+<label for="description">Torrent Description</label>
+<textarea id="description" placeholder="Enter torrent description"></textarea>
+<label for="torrent-hoster">Torrent Host Link</label>
+<input type="text" id="torrent-hoster" placeholder="Enter torrent hoster">
+<label for="torrent-link">Torrent Link</label>
+<input type="text" id="torrent-link" placeholder="Enter .torrent link">
+<label for="magnet-link">Magnet Link</label>
+<input type="text" id="magnet-link" placeholder="Enter magnet link">
+<label for="stream">Stream</label>
+<input type="text" id="stream" placeholder="Enter stream link">
+<button type="button" id="generate-btn">Generate File</button>
+<button type="button" id="copy-btn" onclick="copyButton()">Copy Button script</button>
+</form>
+</div>
 
-			<label for="torrent-link">Torrent Link</label>
-			<input type="text" id="torrent-link" placeholder="Enter .torrent link">
 
-			<label for="magnet-link">Magnet Link</label>
-			<input type="text" id="magnet-link" placeholder="Enter magnet link">
-
-			<label for="stream">Stream</label>
-			<input type="text" id="stream" placeholder="Enter stream link">
-
-			<button type="button" id="generate-btn">Generate File</button>
-		</form>
-	</div>
-	<script src="CodeForTorrentFileGenerator/script.js"></script>
-
-	<center><h2>Script by: HttpAnimations</h2></center>
+  
+<script src="CodeForTorrentFileGenerator/script.js"></script>
+<center><h2>Script by: HttpAnimations</h2></center>
 </body>
 </html>
