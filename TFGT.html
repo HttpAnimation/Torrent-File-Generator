@@ -89,8 +89,8 @@ width: 70%;
 <!-- Hide the sidebar -->
 <button class="button" onclick="toggleSidebar()">Hide the sidebar (f)</button>
 
-<!-- Home -->
-<button class="button" onclick="redirectToServerUrl()">Home</button>
+<!--Home button-->
+<button class="button button-home" onclick="redirectToServerUrl()">Home</button>
 
 <!-- Magnet -->
 <button class="button" onclick="window.location.href='404Magnet.html'">Magnet</button>
@@ -109,11 +109,11 @@ function redirectToServerUrl() {
 
   // Check if the webpage is being accessed from a server
   if (currentUrl.startsWith("http")) {
-    // If yes, redirect to the specified server URL
-    window.location.href = "http://fyc.rf.gd/FYCREWirte%20Code/index.html?i=1/";
+// If yes, redirect to the specified server URL
+window.location.href = "http://fyc.rf.gd/FYCREWirte%20Code/index.html?i=1/";
   } else {
-    // If no, redirect to the local index.html file
-    window.location.href = "index.html";
+// If no, redirect to the local index.html file
+window.location.href = "index.html";
   }
 }
 </script>
