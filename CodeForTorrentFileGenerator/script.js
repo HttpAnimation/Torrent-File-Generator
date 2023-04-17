@@ -49,7 +49,7 @@ function generateTorrentFile(event) {
       // Generate the button code
       const torrentName = nameField.value;
       const buttonCode = `<!-- ${torrentName} -->
-        <button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
+<button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
       const pre = document.createElement('pre');
       pre.textContent = buttonCode;
       center = document.createElement('center');
@@ -81,4 +81,5 @@ function copyButton() {
 
   // Change the text of the copy button to indicate that the code has been copied
   copyBtn.textContent = 'Button Code Copied!';
+  
 }
