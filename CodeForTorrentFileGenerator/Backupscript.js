@@ -5,21 +5,12 @@ const descriptionField = document.getElementById('description');
 const torrentLinkField = document.getElementById('torrent-link');
 const magnetLinkField = document.getElementById('magnet-link');
 const streamField = document.getElementById('stream');
-let center = null;
 
 // Get the generate button and attach a click event listener
 const generateBtn = document.getElementById('generate-btn');
 generateBtn.addEventListener('click', generateTorrentFile);
 
-function generateTorrentFile(event) {
-  // Prevent the default form submission behavior
-  event.preventDefault();
-
-  // Remove the old button code from the screen
-  if (center !== null) {
-    document.body.removeChild(center);
-  }
-
+function generateTorrentFile() {
   // Load the TFGT.html file using an XHR request
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'TFGT.html', true);
@@ -52,7 +43,7 @@ function generateTorrentFile(event) {
         <button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
       const pre = document.createElement('pre');
       pre.textContent = buttonCode;
-      center = document.createElement('center');
+      const center = document.createElement('center');
       center.appendChild(pre);
       document.body.appendChild(center);
 
@@ -66,19 +57,4 @@ function generateTorrentFile(event) {
     }
   };
   xhr.send();
-}
-
-// Get the copy button and attach a click event listener
-const copyBtn = document.getElementById('copy-btn');
-copyBtn.addEventListener('click', copyButton);
-
-function copyButton() {
-  // Get the button code from the pre element
-  const buttonCode = document.querySelector('pre').textContent;
-
-  // Copy the button code to the clipboard
-  navigator.clipboard.writeText(buttonCode);
-
-  // Change the text of the copy button to indicate that the code has been copied
-  copyBtn.textContent = 'Button Code Copied!';
 }
