@@ -81,5 +81,9 @@ function copyButton() {
 
   // Change the text of the copy button to indicate that the code has been copied
   copyBtn.textContent = 'Button Code Copied!';
+  setTimeout(function() {
+    copyBtn.textContent = 'Copy Button script';
+  }, 400);
+    
   
 }
