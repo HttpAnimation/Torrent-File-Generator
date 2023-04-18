@@ -34,7 +34,7 @@ function generateTorrentFile(event) {
         .replace(/Theres no Description for this torrent/g, descriptionField.value)
         .replace(/404Torrent.html/g, torrentLinkField.value)
         .replace(/404Magnet.html/g, magnetLinkField.value)
-        .replace(/404Steam.html/g, streamField.value)
+        .replace(/404Stream.html/g, streamField.value)
         .replace(/No extra info for this torrent/g, moreinfoField.value);
 
       // Create a new Blob with the generated HTML code
