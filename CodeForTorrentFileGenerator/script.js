@@ -65,6 +65,7 @@ function generateTorrentFile(event) {
       magnetLinkField.value = '';
       streamField.value = '';
       torrentHosterField.value = '';
+      moreinfoField.value = '';
     }
   };
   xhr.send();
