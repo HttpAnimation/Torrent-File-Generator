@@ -15,22 +15,31 @@ background-color: #9e75f0; /* Use a light purple color for the background */
 <div class="container">
 <h1>Torrent File Generator</h1>
 <form>
+<!--Name-->
 <label for="name">Torrent Name</label>
 <input type="text" id="name" placeholder="Enter torrent name">
-<label for="description">Torrent Description</label>
-<textarea id="description" placeholder="Enter torrent description"></textarea>
+
+<!--Host Link-->
 <label for="torrent-hoster">Torrent Host Link</label>
 <input type="text" id="torrent-hoster" placeholder="Enter torrent hoster">
+
+<!--Description-->
+<label for="description">Torrent Description</label>
+<textarea id="description" placeholder="Enter torrent description"></textarea>
+
+<!--Magnet-->
 <label for="magnet-link">Magnet Link</label>
 <input type="text" id="magnet-link" placeholder="Enter magnet link">
+
+<!--Torrent-->
 <label for="torrent-link">Torrent Link</label>
 <input type="text" id="torrent-link" placeholder="Enter .torrent link">
+
+<!--Stream-->
 <label for="stream">Stream</label>
 <input type="text" id="stream" placeholder="Enter stream link">
-<label for="more-info">More info</label>
-<input tye="text" id="more-info" placeholder="Enter some extra info">
-<label for="uploader">Uploader</label>
-<input tye="text" id="uploader" placeholder="Enter Uploader name">
+
+<!--Buttons-->
 <button type="button" id="generate-btn">Generate File</button>
 <button type="button" id="copy-btn" onclick="copyButton()">Copy Button script</button>
 </form>
