@@ -6,7 +6,6 @@ const torrentLinkField = document.getElementById('torrent-link');
 const magnetLinkField = document.getElementById('magnet-link');
 const streamField = document.getElementById('stream');
 const moreinfoField = document.getElementById('more-info');
-const uploader = document.getElementById('uploader');
 let center = null;
 
 // Get the generate button and attach a click event listener
@@ -36,8 +35,6 @@ function generateTorrentFile(event) {
         .replace(/404Torrent.html/g, torrentLinkField.value)
         .replace(/404Magnet.html/g, magnetLinkField.value)
         .replace(/404Stream.html/g, streamField.value)
-        .replace(/No extra info for this torrent/g, moreinfoField.value)
-        .replace(/404/g, uploader.value);
 
       // Create a new Blob with the generated HTML code
       const blob = new Blob([generatedFile], {type: 'text/html'});
@@ -67,8 +64,6 @@ function generateTorrentFile(event) {
       magnetLinkField.value = '';
       streamField.value = '';
       torrentHosterField.value = '';
-      moreinfoField.value = '';
-      uploader.value = '';
     }
   };
   xhr.send();
