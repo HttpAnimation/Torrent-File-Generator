@@ -6,6 +6,7 @@ const torrentLinkField = document.getElementById('torrent-link');
 const magnetLinkField = document.getElementById('magnet-link');
 const streamField = document.getElementById('stream');
 const moreinfoField = document.getElementById('more-info');
+const photo = document.getElementById('photo');
 let center = null;
 
 // Get the generate button and attach a click event listener
@@ -29,6 +30,7 @@ function generateTorrentFile(event) {
       // Replace the placeholder text with the form data
       const template = this.responseText;
       const generatedFile = template
+        .replace(/none.png/g, photo.value)
         .replace(/V2TorrentTemplate/g, nameField.value)
         .replace(/TEXT IN HERE/g, torrentHosterField.value)
         .replace(/Theres no Description for this torrent/g, descriptionField.value)
@@ -64,6 +66,7 @@ function generateTorrentFile(event) {
       magnetLinkField.value = '';
       streamField.value = '';
       torrentHosterField.value = '';
+      photo.value = '';
     }
   };
   xhr.send();
