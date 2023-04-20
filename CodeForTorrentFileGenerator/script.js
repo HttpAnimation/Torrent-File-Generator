@@ -37,7 +37,7 @@ function generateTorrentFile(event) {
         .replace(/404Torrent.html/g, torrentLinkField.value)
         .replace(/404Magnet.html/g, magnetLinkField.value)
         .replace(/404Stream.html/g, streamField.value);
-
+        
       // Create a new Blob with the generated HTML code
       const blob = new Blob([generatedFile], {type: 'text/html'});
 
@@ -52,7 +52,7 @@ function generateTorrentFile(event) {
       // Generate the button code
       const torrentName = nameField.value;
       const buttonCode = `<!-- ${torrentName} -->
-<button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
+      <button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
       const pre = document.createElement('pre');
       pre.textContent = buttonCode;
       center = document.createElement('center');
