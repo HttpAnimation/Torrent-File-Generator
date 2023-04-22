@@ -11,7 +11,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <title>FYC</title>
 <link rel="stylesheet" href="styles.css">
 <script src="script.js"></script>
-<script src="Audio.js"></script>
+
 <center><h1>FYC://V2TorrentTemplate</h1></center>
 <center><img src="none.png"</center>
 <!--Link to torrent = |TEXT IN HERE|-->
@@ -103,7 +103,31 @@ width: 70%;
 <!-- Play now (Stream) -->
 <button class="button" onclick="window.location.href='404Stream.html'">Play now (Stream)</button>
 
+<!-- Download this file -->
+<button class="button" onclick="downloadHTML('V2TorrentTemplate.html')">Download this file</button>
 
+<script>
+function downloadHTML(filename) {
+  // Fetch the HTML content
+  fetch(filename)
+    .then(response => response.text())
+    .then(html => {
+      // Create a Blob object from the HTML content
+      const blob = new Blob([html], { type: 'text/html' });
+      // Create a download URL for the Blob
+      const url = URL.createObjectURL(blob);
+      // Create a temporary link element and click it to initiate the download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      // Revoke the download URL to free up resources
+      URL.revokeObjectURL(url);
+    });
+}
+</script>
 <script>
 function redirectToServerUrl() {
   // Get the current URL of the webpage
@@ -161,6 +185,5 @@ This torrent was made with TorrentMaker
 
 <!-- Import the Ubuntu Bold font -->
 <b><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"></b>
-
 </body>
 </html>
