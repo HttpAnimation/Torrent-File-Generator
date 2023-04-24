@@ -59,6 +59,17 @@ function generateTorrentFile(event) {
       center.appendChild(pre);
       document.body.appendChild(center);
 
+      const torrentName2 = nameField.value;
+      const buttonAdds = 'adds ${torrentName2};'
+      const preAdds = document.createElement('pre');
+      preAdds.textContent = buttonAdds;
+      center = decode.createElement('center');
+      center.appendChild(preAdds)
+      document.body.appendChild(center);
+
+
+
+
       // Clear the form fields after the file has been saved
       nameField.value = '';
       descriptionField.value = '';
@@ -88,6 +99,18 @@ function copyButton() {
   setTimeout(function() {
     copyBtn.textContent = 'Copy Button script';
   }, 400);
-    
-  
 }
+
+//Get the copy button for adds
+const copyAdds = document.getElementById('copy-adds');
+copyAdds.addEventListener('click', copyButtonAdds);
+
+function copyButtonAdds() {
+  const copyAdds = document.querySelector('pre:nth-of-type(2)').textContent;
+  navigator.clipboard.writeText(copyAdds);
+  copyAdds.textContent = 'Copied the adds text';
+  setTimeout(function() {
+    copyAdds.textContent = 'Copy Adds Text';
+  }, 400);
+}
+
