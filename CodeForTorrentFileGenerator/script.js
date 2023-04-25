@@ -30,14 +30,14 @@ function generateTorrentFile(event) {
       // Replace the placeholder text with the form data
       const template = this.responseText;
       const generatedFile = template
-        .replace(/none.png/g, photo.value)
         .replace(/V2TorrentTemplate/g, nameField.value)
         .replace(/TEXT IN HERE/g, torrentHosterField.value)
         .replace(/Theres no Description for this torrent/g, descriptionField.value)
         .replace(/404Torrent.html/g, torrentLinkField.value)
         .replace(/404Magnet.html/g, magnetLinkField.value)
-        .replace(/404Stream.html/g, streamField.value);
-        
+        .replace(/404Stream.html/g, streamField.value)
+        .replace(/none.png/g, photo.value);
+
       // Create a new Blob with the generated HTML code
       const blob = new Blob([generatedFile], {type: 'text/html'});
 
@@ -52,23 +52,12 @@ function generateTorrentFile(event) {
       // Generate the button code
       const torrentName = nameField.value;
       const buttonCode = `<!-- ${torrentName} -->
-      <button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
+<button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
       const pre = document.createElement('pre');
       pre.textContent = buttonCode;
       center = document.createElement('center');
       center.appendChild(pre);
       document.body.appendChild(center);
-
-      const torrentName2 = nameField.value;
-      const buttonAdds = 'adds ${torrentName2};'
-      const preAdds = document.createElement('pre');
-      preAdds.textContent = buttonAdds;
-      center = decode.createElement('center');
-      center.appendChild(preAdds)
-      document.body.appendChild(center);
-
-
-
 
       // Clear the form fields after the file has been saved
       nameField.value = '';
@@ -99,18 +88,6 @@ function copyButton() {
   setTimeout(function() {
     copyBtn.textContent = 'Copy Button script';
   }, 400);
+    
+  
 }
-
-//Get the copy button for adds
-const copyAdds = document.getElementById('copy-adds');
-copyAdds.addEventListener('click', copyButtonAdds);
-
-function copyButtonAdds() {
-  const copyAdds = document.querySelector('pre:nth-of-type(2)').textContent;
-  navigator.clipboard.writeText(copyAdds);
-  copyAdds.textContent = 'Copied the adds text';
-  setTimeout(function() {
-    copyAdds.textContent = 'Copy Adds Text';
-  }, 400);
-}
-
