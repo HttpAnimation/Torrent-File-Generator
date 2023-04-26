@@ -6,7 +6,8 @@ const torrentLinkField = document.getElementById('torrent-link');
 const magnetLinkField = document.getElementById('magnet-link');
 const streamField = document.getElementById('stream');
 const moreinfoField = document.getElementById('more-info');
-const photo = document.getElementById('photo');
+const photoField = document.getElementById('photo');
+
 let center = null;
 
 // Get the generate button and attach a click event listener
@@ -29,20 +30,21 @@ function generateTorrentFile(event) {
     if (this.readyState === 4 && this.status === 200) {
       // Replace the placeholder text with the form data
       const template = this.responseText;
+      const nameFieldValue = nameField.value.replace(/[\.\-]/g, ' ').replace(/[^\w\s]/g, '');
       const generatedFile = template
-        .replace(/V2TorrentTemplate/g, nameField.value)
+        .replace(/V2TorrentTemplate/g, nameFieldValue)
         .replace(/TEXT IN HERE/g, torrentHosterField.value)
         .replace(/Theres no Description for this torrent/g, descriptionField.value)
         .replace(/404Torrent.html/g, torrentLinkField.value)
         .replace(/404Magnet.html/g, magnetLinkField.value)
         .replace(/404Stream.html/g, streamField.value)
-        .replace(/none.png/g, photo.value);
+        .replace(/none.png/g, photoField.value);
 
       // Create a new Blob with the generated HTML code
       const blob = new Blob([generatedFile], {type: 'text/html'});
 
       // Save the Blob as a file with the name from the Torrent Name field
-      const filename = nameField.value + '.html';
+      const filename = nameFieldValue + '.html';
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.setAttribute('href', url);
@@ -50,7 +52,7 @@ function generateTorrentFile(event) {
       link.click();
 
       // Generate the button code
-      const torrentName = nameField.value;
+      const torrentName = nameFieldValue;
       const buttonCode = `<!-- ${torrentName} -->
 <button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
       const pre = document.createElement('pre');
@@ -66,7 +68,7 @@ function generateTorrentFile(event) {
       magnetLinkField.value = '';
       streamField.value = '';
       torrentHosterField.value = '';
-      photo.value = '';
+      photoField.value = '';
     }
   };
   xhr.send();
