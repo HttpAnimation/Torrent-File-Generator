@@ -30,7 +30,7 @@ function generateTorrentFile(event) {
     if (this.readyState === 4 && this.status === 200) {
       // Replace the placeholder text with the form data
       const template = this.responseText;
-      const nameFieldValue = nameField.value.replace(/[\.\-]/g, ' ').replace(/[^\w\s]/g, '');
+      const nameFieldValue = nameField.value.replace(/[\.]/g, ' ').replace(/[^\w\s]/g, '');
       const generatedFile = template
         .replace(/V2TorrentTemplate/g, nameFieldValue)
         .replace(/TEXT IN HERE/g, torrentHosterField.value)
@@ -38,7 +38,8 @@ function generateTorrentFile(event) {
         .replace(/404Torrent.html/g, torrentLinkField.value)
         .replace(/404Magnet.html/g, magnetLinkField.value)
         .replace(/404Stream.html/g, streamField.value)
-        .replace(/none.png/g, photoField.value);
+        .replace(/none.png/g, photoField.value)
+        .replace(/HostLink/g, torrentHosterField.value);
 
       // Create a new Blob with the generated HTML code
       const blob = new Blob([generatedFile], {type: 'text/html'});
