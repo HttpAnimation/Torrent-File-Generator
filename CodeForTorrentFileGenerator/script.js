@@ -30,8 +30,7 @@ function generateTorrentFile(event) {
     if (this.readyState === 4 && this.status === 200) {
       // Replace the placeholder text with the form data
       const template = this.responseText;
-      const nameFieldValue = nameField.value.replace(/[\.]/g, ' ').replace(/[^\w\s]/g, '');
-      const generatedFile = template
+      const nameFieldValue = nameField.value.replace(/[^\w\s\.]/g, '');      const generatedFile = template
         .replace(/V2TorrentTemplate/g, nameFieldValue)
         .replace(/TEXT IN HERE/g, torrentHosterField.value)
         .replace(/Theres no Description for this torrent/g, descriptionField.value)
