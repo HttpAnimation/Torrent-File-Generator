@@ -136,16 +136,18 @@ function redirectToServerUrl() {
   // Get the current URL of the webpage
   var currentUrl = window.location.href;
 
-  // Check if the webpage is being accessed from a server
-  if (currentUrl.startsWith("http")) {
-    // If yes, redirect to the specified server URL
+  // Check if the webpage URL contains "http://fyc.rf.gd"
+  if (currentUrl.includes("http://fyc.rf.gd")) {
+    // If the URL contains "http://fyc.rf.gd", redirect to the specified server URL
     window.location.href = "http://fyc.rf.gd/FYCREWirte%20Code/index.html?i=1/";
-  } else if (currentUrl.startsWith("file://") || currentUrl.startsWith("localhost") || currentUrl.startsWith("http://127.0.0.1:3000")) {
-    // If accessing from local host, redirect to local index.html file
+  } else {
+    // If the URL does not contain "http://fyc.rf.gd", redirect to local index.html file
     window.location.href = "index.html";
   }
 }
+
 </script>
+
 
 
 
