@@ -7,6 +7,7 @@ const magnetLinkField = document.getElementById('magnet-link');
 const streamField = document.getElementById('stream');
 const moreinfoField = document.getElementById('more-info');
 const photoField = document.getElementById('photo');
+const seedersField = document.getElementById('seeders')
 
 let center = null;
 
@@ -38,6 +39,7 @@ function generateTorrentFile(event) {
         .replace(/404Magnet.html/g, magnetLinkField.value)
         .replace(/404Stream.html/g, streamField.value)
         .replace(/none.png/g, photoField.value)
+        .replace(/00/g, seedersField.value)
         .replace(/HostLink/g, torrentHosterField.value);
 
       // Create a new Blob with the generated HTML code
@@ -69,6 +71,7 @@ function generateTorrentFile(event) {
       streamField.value = '';
       torrentHosterField.value = '';
       photoField.value = '';
+      seedersField.value = '';
     }
   };
   xhr.send();
