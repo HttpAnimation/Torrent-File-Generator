@@ -40,7 +40,7 @@ function generateTorrentFile(event) {
         .replace(/404Magnet.html/g, magnetLinkField.value)
         .replace(/404Stream.html/g, streamField.value)
         .replace(/none.png/g, photoField.value)
-        .replace(/00/g, seedersField.value)
+        .replace(/UnkownSeeders/g, seedersField.value)
         .replace(/HostLink/g, torrentHosterField.value)
         .replace(/SOURCELink/g, sourceField.value);
 
