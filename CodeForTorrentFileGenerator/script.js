@@ -27,7 +27,7 @@ function generateTorrentFile(event) {
 
   // Load the TFGT.html file using an XHR request
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'TFGT.html', true);
+  xhr.open('GET', 'https://raw.githubusercontent.com/HttpAnimation/Torrent-File-Generator/gh-pages/TFGT.html', true);
   xhr.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
       // Replace the placeholder text with the form data
