@@ -11,6 +11,7 @@ const seedersField = document.getElementById('seeders');
 const sourceField = document.getElementById('source')
 
 let center = null;
+let isVideoEmbedded = false;
 
 // Get the generate button and attach a click event listener
 const generateBtn = document.getElementById('generate-btn');
@@ -96,6 +97,27 @@ function copyButton() {
   setTimeout(function() {
     copyBtn.textContent = 'Copy Button script';
   }, 400);
-    
+}
+
+// Function to embed or unembed the video
+function toggleVideoEmbed() {
+  const videoContainer = document.getElementById('video-container');
   
+  if (isVideoEmbedded) {
+    // Remove the video iframe from the container
+    videoContainer.innerHTML = '';
+    isVideoEmbedded = false;
+  } else {
+    // Embed the video iframe in the container
+    const videoIframe = document.createElement('iframe');
+    videoIframe.width = '1166';
+    videoIframe.height = '656';
+    videoIframe.src = 'https://www.youtube.com/embed/jmNhN1E683M';
+    videoIframe.title = 'How to fill out TorrentFileGenerator';
+    videoIframe.frameborder = '0';
+    videoIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    videoIframe.allowfullscreen = true;
+    videoContainer.appendChild(videoIframe);
+    isVideoEmbedded = true;
+  }
 }
