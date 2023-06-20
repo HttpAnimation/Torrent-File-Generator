@@ -2,12 +2,20 @@
 <html>
 <head>
 <script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "go9ad7tc31");
+    (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {
+            (c[a].q = c[a].q || []).push(arguments);
+        };
+
+        t = l.createElement(r);
+        t.async = true;
+        t.src = "https://www.clarity.ms/tag/" + i;
+
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "go9ad7tc31");
 </script>
+
 <title>FYC</title>
 <link rel="stylesheet" href="styles.css">
 <script src="script.js"></script>
@@ -90,9 +98,8 @@ width: 70%;
 <!-- Hide the sidebar -->
 <button class="button button-hide" onclick="toggleSidebar()">Hide the sidebar (f)</button>
 
-<!--Home button-->
-<button class="button button-home" onclick="redirectToServerUrl()">Home</button>
-
+<!-- Home button -->
+<button class="button" onclick="window.location.href='index.html'">Home</button>
 <!-- Magnet -->
 <button class="button" onclick="window.location.href='404Magnet.html'">Magnet</button>
 
@@ -133,22 +140,7 @@ function downloadHTML(filename) {
     });
 }
 </script>
-<script>
-function redirectToServerUrl() {
-  // Get the current URL of the webpage
-  var currentUrl = window.location.href;
 
-  // Check if the webpage URL contains "http://fyc.rf.gd"
-  if (currentUrl.includes("http://fyc.rf.gd")) {
-    // If the URL contains "http://fyc.rf.gd", redirect to the specified server URL
-    window.location.href = "http://fyc.rf.gd/FYCREWirte%20Code/index.html?i=1/";
-  } else {
-    // If the URL does not contain "http://fyc.rf.gd", redirect to local index.html file
-    window.location.href = "index.html";
-  }
-}
-
-</script>
 
 
 
@@ -157,10 +149,10 @@ function redirectToServerUrl() {
 
 <!-- Content -->
 <div style="margin-left: 20%;">
-<link rel="shortcut icon" href="Photos/FYC Rewrite.ico" />
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/HttpAnimation/FYC/main/FYC%20Rewrite.ico" />
 <style>
 body {
-background-image: url('Photos/With\ Credit\ Protogen.png');
+background-image: url('https://github.com/HttpAnimation/FYC/blob/main/With%20Credit%20Protogen.png?raw=true');
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
