@@ -31,40 +31,48 @@ background-color: #9e75f0; /* Use a light purple color for the background */
 <h1>Torrent File Generator</h1>
 <form>
     <button type="button" id="video-toggle-btn" onclick="toggleVideoEmbed()">Toggle Video Help</button>
-    <!--Name-->
+    <button type="button" id="normal-mode" onclick="redirectToNormalMode()">Movie Mode</button>
+
+    <script>
+      function redirectToNormalMode() {
+        window.location.href = 'TorrentGeneratorMovieMode.html';
+      }
+    </script>
+
+<!--Name-->
 <label for="name">Torrent Name</label>
 <input type="text" id="name" placeholder="Enter torrent name">
 <!--Host Link-->
 <label for="torrent-hoster">Torrent Host Link</label>
-<input type="text" id="torrent-hoster" placeholder="Enter torrent hoster">
+<input type="text" id="torrent-hoster" placeholder="Enter torrent hoster | EXP: https://url.com/">
 
 <!--Source-->
 <label for="source">Source</label>
-<input type="text" id="source" placeholder="Enter source link">
+<input type="text" id="source" placeholder="Enter source link | EXP: https://gamehub.pop/Five-fingers-in-my-ass">
 
 <!--Seeders at the time-->
 <label for="torrent-hoster">Seeders at the time</label>
-<input type="text" id="seeders" placeholder="Enter Seeders at the time">
+<input type="text" id="seeders" placeholder="Enter Seeders at the time | EXP: 69">
 
 <!--Photo-->
 <label for="photo">Photo URL</label>
-<textarea id="photo" placeholder="Enter a Photo url"></textarea>
+<textarea id="photo" placeholder="Enter a Photo url | EXP: https://img.bb/a0934v"></textarea>
 
 <!--Description-->
 <label for="description">Torrent Description</label>
-<textarea id="description" placeholder="Enter torrent description"></textarea>
+<textarea id="description" placeholder="Enter torrent description | EXP: Http is really confused what to put into this prompt"></textarea>
 
 <!--Magnet-->
 <label for="magnet-link">Magnet URL</label>
-<input type="text" id="magnet-link" placeholder="Enter magnet link">
+<input type="text" id="magnet-link" placeholder="Enter magnet link | EXP: magnet://">
 
 <!--Torrent-->
 <label for="torrent-link">.Torrent URL</label>
-<input type="text" id="torrent-link" placeholder="Enter .torrent link">
+<input type="text" id="torrent-link" placeholder="Enter .torrent link | EXP:// https://torrents.thing/TFGT.torrent">
 
 <!--Stream-->
 <label for="stream">Stream URL</label>
-<input type="text" id="stream" placeholder="Enter stream link">
+<input type="text" id="stream" placeholder="Enter stream link | EXP: https://streamer.cum/movies/the-fnaf-movie.html">
 
 <!--Buttons-->
 <button type="button" id="copy-btn" onclick="copyButton()">Copy Button script</button>
