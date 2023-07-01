@@ -28,51 +28,51 @@ background-color: #9e75f0; /* Use a light purple color for the background */
 <body>
 
 <div class="container">
-<h1>Torrent File Generator</h1>
+<h1>Torrent File Generator (Movie-Mode)</h1>
 <form>
     <button type="button" id="video-toggle-btn" onclick="toggleVideoEmbed()">Toggle Video Help</button>
-    <button type="button" id="movie-mode" onclick="redirectToMovieMode()">Movie Mode</button>
+    <button type="button" id="normal-mode" onclick="redirectToNormalMode()">Normal Mode</button>
 
     <script>
-      function redirectToMovieMode() {
-        window.location.href = 'TorrentGeneratorMovieMode.html';
+      function redirectToNormalMode() {
+        window.location.href = 'TorrentGenerator.html';
       }
     </script>
     <!--Name-->
-<label for="name">Torrent Name</label>
-<input type="text" id="name" placeholder="Enter torrent name">
+<label for="name">Movie Name</label>
+<input type="text" id="name" placeholder="Enter torrent name | EXP: Movie 1998 1080p">
 
 <!--Host Link-->
 <label for="torrent-hoster">Torrent Host Link</label>
-<input type="text" id="torrent-hoster" placeholder="Enter torrent hoster">
-
-<!--Source-->
-<label for="source">Source</label>
-<input type="text" id="source" placeholder="Enter source link">
+<input type="text" id="torrent-hoster" placeholder="Enter torrent hoster | EXP: https://url.com/">
 
 <!--Seeders at the time-->
 <label for="torrent-hoster">Seeders at the time</label>
-<input type="text" id="seeders" placeholder="Enter Seeders at the time">
+<input type="text" id="seeders" placeholder="Enter Seeders at the time | EXP: 69">
+
+<!--Resolution-->
+<label for="resolution">Resolution</label>
+<textarea id="resolution" placeholder="Enter a Resolution type | EXP: 1080p/720p (NO CAP P)"></textarea>
 
 <!--Photo-->
 <label for="photo">Photo URL</label>
-<textarea id="photo" placeholder="Enter a Photo url"></textarea>
+<textarea id="photo" placeholder="Enter a Photo url | EXP: https://img.bb/a0934v"></textarea>
 
 <!--Description-->
-<label for="description">Torrent Description</label>
-<textarea id="description" placeholder="Enter torrent description"></textarea>
+<label for="description">Movie Description</label>
+<textarea id="description" placeholder="Enter torrent description | EXP: Http is really confused what to put into this prompt"></textarea>
 
 <!--Magnet-->
 <label for="magnet-link">Magnet URL</label>
-<input type="text" id="magnet-link" placeholder="Enter magnet link">
+<input type="text" id="magnet-link" placeholder="Enter magnet link | EXP: magnet://">
 
 <!--Torrent-->
 <label for="torrent-link">.Torrent URL</label>
-<input type="text" id="torrent-link" placeholder="Enter .torrent link">
+<input type="text" id="torrent-link" placeholder="Enter .torrent link | EXP:// https://torrents.thing/TFGT.torrent">
 
 <!--Stream-->
 <label for="stream">Stream URL</label>
-<input type="text" id="stream" placeholder="Enter stream link">
+<input type="text" id="stream" placeholder="Enter stream link | EXP: https://streamer.cum/movies/the-fnaf-movie.html">
 
 <!--Buttons-->
 <button type="button" id="copy-btn" onclick="copyButton()">Copy Button script</button>
@@ -80,7 +80,7 @@ background-color: #9e75f0; /* Use a light purple color for the background */
 </form>
 </div>
 <center><div id="video-container"></div></center>
-<script src="CodeForTorrentFileGenerator/script.js"></script>
-<center><h2><p>V:R1</p>Script by: HttpAnimations</h2></center>
+<script src="CodeForTorrentFileGenerator/Movie-script.js"></script>
+<center><h2><p>V:R1-Movie</p>Script by: HttpAnimations</h2></center>
 </body>
 </html>
