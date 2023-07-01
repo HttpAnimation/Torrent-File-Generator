@@ -76,6 +76,7 @@ function generateTorrentFile(event) {
       photoField.value = '';
       seedersField.value = '';
       sourceField.value = '';
+      ResField.value = '';
     }
   };
   xhr.send();
