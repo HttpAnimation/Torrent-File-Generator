@@ -35,6 +35,7 @@ function generateTorrentFile(event) {
       const template = this.responseText;
       const nameFieldValue = nameField.value.replace(/[^\w\s\.]/g, '');      const generatedFile = template
         .replace(/V2TorrentTemplate/g, nameFieldValue)
+        .replace(/V2TorrentTemplate/g, nameFieldValue)
         .replace(/TEXT IN HERE/g, torrentHosterField.value)
         .replace(/Theres no Description for this torrent/g, descriptionField.value)
         .replace(/404Torrent.html/g, torrentLinkField.value)

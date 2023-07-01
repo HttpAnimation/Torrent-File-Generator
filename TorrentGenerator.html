@@ -34,7 +34,13 @@ background-color: #9e75f0; /* Use a light purple color for the background */
     <!--Name-->
 <label for="name">Torrent Name</label>
 <input type="text" id="name" placeholder="Enter torrent name">
+<button type="button" id="normal-mode" onclick="redirectToNormalMode()">Normal Mode</button>
 
+<script>
+  function redirectToNormalMode() {
+    window.location.href = 'TorrentGenerator.html';
+  }
+</script>
 <!--Host Link-->
 <label for="torrent-hoster">Torrent Host Link</label>
 <input type="text" id="torrent-hoster" placeholder="Enter torrent hoster">

@@ -8,7 +8,7 @@ const streamField = document.getElementById('stream');
 const moreinfoField = document.getElementById('more-info');
 const photoField = document.getElementById('photo');
 const seedersField = document.getElementById('seeders');
-const sourceField = document.getElementById('source')
+const sourceField = document.getElementById('source');
 const ResField = document.getElementById('resolution')
 
 let center = null;
