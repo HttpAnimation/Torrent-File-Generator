@@ -59,7 +59,7 @@ function generateTorrentFile(event) {
       // Generate the button code
       const torrentName = nameFieldValue;
       const buttonCode = `<!-- ${torrentName} -->
-<button class="button" onclick="window.location.href='${torrentName}.html'">${torrentName}</button>`;
+<button class="button" onclick="window.location.href='Torrents/${torrentName}.html'">${torrentName}</button>`;
       const pre = document.createElement('pre');
       pre.textContent = buttonCode;
       center = document.createElement('center');
